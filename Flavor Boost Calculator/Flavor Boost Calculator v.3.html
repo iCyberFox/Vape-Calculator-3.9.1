@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Калькулятор ароматизатора</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .card {
+      background-color: #ffffff;
+      padding: 20px 15px 20px 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #1e293b;
+      font-size: 22px;
+      font-weight: 600;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #334155;
+    }
+    input[type="number"],
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .input-sm {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .full-width-input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .button:hover {
+      background-color: #2563eb;
+    }
+    .add-btn {
+      background-color: #27ae60;
+    }
+    .add-btn:hover {
+      background-color: #219150;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #1e293b;
+      white-space: pre-wrap;
+    }
+    .flavor-container {
+      margin-bottom: 15px;
+    }
+    .flavor-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .flavor-row input[type="text"] {
+      width: 40%;
+    }
+    .flavor-row input[type="number"] {
+      width: 30%;
+    }
+    .remove-btn {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      font-size: 20px;
+      border-radius: 6px;
+      padding: 0 12px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background-color: #dc2626;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Підвищення концентрації ароматизаторів</h2>
+    <label for="volume">Поточний обʼєм рідини (мл):</label>
+    <input type="number" id="volume" step="0.1" class="full-width-input"/>
+
+    <div id="flavors"></div>
+    <button class="button add-btn" onclick="addFlavor()">+ Додати ароматизатор</button>
+    <button class="button" onclick="calculate()">Розрахувати</button>
+
+    <div class="result" id="increaseResult"></div>
+
+    <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;" />
+
+    <h2>Зменшення концентрації ароматизатора</h2>
+    <label for="currentVolume">Поточний обʼєм рідини (мл):</label>
+    <input type="number" id="currentVolume" step="0.1" class="full-width-input"/>
+
+    <label for="currentPercent">Поточна концентрація ароматизатора (%):</label>
+    <input type="number" id="currentPercent" step="0.1" class="full-width-input"/>
+
+    <label for="targetPercent">Бажана концентрація ароматизатора (%):</label>
+    <input type="number" id="targetPercent" step="0.1" class="full-width-input"/>
+
+    <button class="button" onclick="calculateDilution()">Розрахувати</button>
+    <div class="result" id="dilutionResult"></div>
+  </div>
+
+  <script>
+    let flavorCount = 0;
+
+    function addFlavor(defaultName = '', defaultCurrent = '', defaultTarget = '') {
+      flavorCount++;
+      const container = document.getElementById('flavors');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flavor-container';
+
+      const row = document.createElement('div');
+      row.className = 'flavor-row';
+      row.innerHTML = `
+        <input type="text" value="${defaultName || `Ароматизатор ${flavorCount}`}" />
+        <input type="number" placeholder="% поточний" step="0.01" value="${defaultCurrent}"/>
+        <input type="number" placeholder="% цільовий" step="0.01" value="${defaultTarget}"/>
+        <button class="remove-btn" onclick="removeFlavor(this)">×</button>
+      `;
+      wrapper.appendChild(row);
+      container.appendChild(wrapper);
+    }
+
+    function removeFlavor(button) {
+      button.closest('.flavor-container').remove();
+      flavorCount = 0;
+      const rows = document.querySelectorAll('#flavors .flavor-row');
+      rows.forEach((row, index) => {
+        const input = row.querySelector('input[type="text"]');
+        input.value = `Ароматизатор ${index + 1}`;
+        flavorCount++;
+      });
+    }
+
+    function calculate() {
+      const volume = parseFloat(document.getElementById('volume').value);
+      const rows = document.querySelectorAll('#flavors .flavor-row');
+      let resultText = '';
+
+      rows.forEach((row, index) => {
+        const inputs = row.querySelectorAll('input');
+        const name = inputs[0].value;
+        const current = parseFloat(inputs[1].value);
+        const target = parseFloat(inputs[2].value);
+        const currentFlavor = volume * (current / 100);
+        const x = (target / 100 * volume - currentFlavor) / (1 - target / 100);
+
+        if (x >= 0 && isFinite(x)) {
+          const drops = x * 33;
+          resultText += `${name}: додати ${x.toFixed(3)} мл (${drops.toFixed(0)} каплі)\n`;
+        } else {
+          resultText += `${name}: помилка в розрахунках\n`;
+        }
+      });
+
+      document.getElementById('increaseResult').innerText = resultText.trim();
+    }
+
+    function calculateDilution() {
+      const V1 = parseFloat(document.getElementById('currentVolume').value);
+      const C1 = parseFloat(document.getElementById('currentPercent').value);
+      const C2 = parseFloat(document.getElementById('targetPercent').value);
+
+      if (isNaN(V1) || isNaN(C1) || isNaN(C2) || C2 >= C1 || C2 <= 0 || C1 <= 0) {
+        document.getElementById('dilutionResult').innerText = 'Помилка: перевірте введені значення.';
+        return;
+      }
+
+      const V2 = V1 * C1 / C2;
+      const additional = V2 - V1;
+
+      document.getElementById('dilutionResult').innerText =
+        `Додати ${additional.toFixed(2)} мл бази.\nКінцевий обʼєм: ${V2.toFixed(2)} мл.`;
+    }
+
+    addFlavor();
+  </script>
+</body>
+</html>

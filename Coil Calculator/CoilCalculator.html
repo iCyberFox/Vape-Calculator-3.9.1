@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор намотки спіралі</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="CoilCalculator.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Калькулятор намотки спіралі</h1>
+        
+        <div class="row">
+            <div class="col-md-7 col-sm-12">
+                <div class="calc-block">
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Кількість проводів</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="btn-group">
+                                <input type="radio" name="wires_number" id="wn1" value="1" checked>
+                                <label for="wn1">1</label>
+                                <input type="radio" name="wires_number" id="wn2" value="2">
+                                <label for="wn2">2</label>
+                                <input type="radio" name="wires_number" id="wn3" value="3">
+                                <label for="wn3">3</label>
+                                <input type="radio" name="wires_number" id="wn4" value="4">
+                                <label for="wn4">4</label>
+                                <input type="radio" name="wires_number" id="wn5" value="5">
+                                <label for="wn5">5</label>
+                                <input type="radio" name="wires_number" id="wn6" value="6">
+                                <label for="wn6">6</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Кількість спіралей</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="btn-group">
+                                <input type="radio" name="coils_number" id="cn1" value="1" checked>
+                                <label for="cn1">1</label>
+                                <input type="radio" name="coils_number" id="cn2" value="2">
+                                <label for="cn2">2</label>
+                                <input type="radio" name="coils_number" id="cn3" value="3">
+                                <label for="cn3">3</label>
+                                <input type="radio" name="coils_number" id="cn4" value="4">
+                                <label for="cn4">4</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Тип спіралі</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="btn-group">
+                                <input type="radio" name="ct" id="ct2" value="2">
+                                <label for="ct2">Простий</label>
+                                <input type="radio" name="ct" id="ct1" value="1" checked>
+                                <label for="ct1">Мікрокойл</label>
+                                <input type="radio" name="ct" id="ct3" value="3">
+                                <label for="ct3">Клэптон</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Діаметр дроту</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <select id="wire_diam" class="form-control">
+                                <option value="0.10">0.10 мм (AWG 38)</option>
+                                <option value="0.11">0.11 мм (AWG 37)</option>
+                                <option value="0.12">0.12 мм (AWG 36)</option>
+                                <option value="0.14">0.14 мм (AWG 35)</option>
+                                <option value="0.15">0.15 мм</option>
+                                <option value="0.16">0.16 мм (AWG 34)</option>
+                                <option value="0.18">0.18 мм (AWG 33)</option>
+                                <option value="0.20">0.20 мм (AWG 32)</option>
+                                <option value="0.22">0.22 мм (AWG 31)</option>
+                                <option value="0.25">0.25 мм (AWG 30)</option>
+                                <option value="0.28">0.28 мм (AWG 29)</option>
+                                <option value="0.30">0.30 мм</option>
+                                <option value="0.32" selected>0.32 мм (AWG 28)</option>
+                                <option value="0.35">0.35 мм</option>
+                                <option value="0.36">0.36 мм (AWG 27)</option>
+                                <option value="0.38">0.38 мм</option>
+                                <option value="0.40">0.40 мм (AWG 26)</option>
+                                <option value="0.45">0.45 мм (AWG 25)</option>
+                                <option value="0.50">0.50 мм</option>
+                                <option value="0.51">0.51 мм (AWG 24)</option>
+                                <option value="0.57">0.57 мм (AWG 23)</option>
+                                <option value="0.60">0.60 мм</option>
+                                <option value="0.63">0.63 мм</option>
+                                <option value="0.64">0.64 мм (AWG 22)</option>
+                                <option value="0.70">0.70 мм</option>
+                                <option value="0.71">0.71 мм (AWG 21)</option>
+                                <option value="0.80">0.80 мм</option>
+                                <option value="0.81">0.81 мм (AWG 20)</option>
+                                <option value="0.90">0.90 мм</option>
+                                <option value="0.91">0.91 мм (AWG 19)</option>
+                                <option value="1.0">1.0 мм</option>
+                                <option value="1.02">1.02 мм (AWG 18)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Діаметр витка</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <select id="coil_diam" class="form-control">
+                                <option value="2">2.0 мм</option>
+                                <option value="2.25">2.25 мм</option>
+                                <option value="2.5" selected>2.5 мм</option>
+                                <option value="2.75">2.75 мм</option>
+                                <option value="3">3.0 мм</option>
+                                <option value="3.5">3.5 мм</option>
+                                <option value="4">4.0 мм</option>
+                                <option value="4.5">4.5 мм</option>
+                                <option value="5">5.0 мм</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Кількість витків</h4>
+                        </div>
+                        <div class="col-md-5 col-sm-8">
+                            <select id="windings_number" class="form-control">
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3">3</option>
+                                <option value="3.5">3.5</option>
+                                <option value="4">4</option>
+                                <option value="4.5">4.5</option>
+                                <option value="5" selected>5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                                <option value="9.5">9.5</option>
+                                <option value="10">10</option>
+                                <option value="10.5">10.5</option>
+                                <option value="11">11</option>
+                                <option value="11.5">11.5</option>
+                                <option value="12">12</option>
+                                <option value="12.5">12.5</option>
+                                <option value="13">13</option>
+                                <option value="13.5">13.5</option>
+                                <option value="14">14</option>
+                                <option value="14.5">14.5</option>
+                                <option value="15">15</option>
+                                <option value="15.5">15.5</option>
+                                <option value="16">16</option>
+                                <option value="16.5">16.5</option>
+                                <option value="17">17</option>
+                                <option value="17.5">17.5</option>
+                                <option value="18">18</option>
+                                <option value="18.5">18.5</option>
+                                <option value="19">19</option>
+                                <option value="19.5">19.5</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-4">
+                            <div class="checkbox">
+                                <input type="checkbox" id="twisted" name="twisted">
+                                <label for="twisted">Косичка</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Довжина ніжок</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <select id="legs_length" class="form-control">
+                                <option value="0">2x0 мм</option>
+                                <option value="0.5">2x0.5 мм</option>
+                                <option value="1">2x1 мм</option>
+                                <option value="1.5">2x1.5 мм</option>
+                                <option value="2">2x2 мм</option>
+                                <option value="2.5">2x2.5 мм</option>
+                                <option value="3">2x3 мм</option>
+                                <option value="4">2x4 мм</option>
+                                <option value="5" selected>2x5 мм</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Тип дроту</h4>
+                        </div>
+                        <div class="col-md-5 col-sm-8">
+                            <select id="wire_type" class="form-control">
+                                <option value="0.09">Nickel 200 (Ni)</option>
+                                <option value="0.24">NiFe30</option>
+                                <option value="0.28">Dicodes Resist</option>
+                                <option value="0.36">NiFe48</option>
+                                <option value="0.42">Titanium (Ti)</option>
+                                <option value="0.74">SS AISI 316</option>
+                                <option value="0.8">SS AISI 304</option>
+                                <option value="1.08" selected>Nichrome Ni80</option>
+                                <option value="1.11">Nichrome Ni60</option>
+                                <option value="1.39">Фехраль</option>
+                                <option value="1.35">Kanthal D</option>
+                                <option value="1.45">Kanthal A1</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-4">
+                            <h6>
+                                <span>TCR:</span>
+                                <span id="tc">0.00001</span>
+                            </h6>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group bg-info" id="clptbar" style="display: none;">
+                        <div class="col-md-4 col-sm-12">
+                            <h4>Обмотка</h4>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="clapton-container">
+                                <div class="clapton-item">
+                                    <select id="clap_w_diam" class="form-control">
+                                        <option value="0.10" selected>0.10 мм (AWG 38)</option>
+                                        <option value="0.11">0.11 мм (AWG 37)</option>
+                                        <option value="0.12">0.12 мм (AWG 36)</option>
+                                        <option value="0.14">0.14 мм (AWG 35)</option>
+                                        <option value="0.15">0.15 мм</option>
+                                        <option value="0.16">0.16 мм (AWG 34)</option>
+                                        <option value="0.18">0.18 мм (AWG 33)</option>
+                                        <option value="0.20">0.20 мм (AWG 32)</option>
+                                        <option value="0.22">0.22 мм (AWG 31)</option>
+                                        <option value="0.25">0.25 мм (AWG 30)</option>
+                                        <option value="0.28">0.28 мм (AWG 29)</option>
+                                        <option value="0.30">0.30 мм</option>
+                                        <option value="0.32">0.32 мм (AWG 28)</option>
+                                        <option value="0.35">0.35 мм</option>
+                                        <option value="0.36">0.36 мм (AWG 27)</option>
+                                        <option value="0.38">0.38 мм</option>
+                                        <option value="0.40">0.40 мм (AWG 26)</option>
+                                        <option value="0.45">0.45 мм (AWG 25)</option>
+                                        <option value="0.50">0.50 мм</option>
+                                        <option value="0.51">0.51 мм (AWG 24)</option>
+                                        <option value="0.57">0.57 мм (AWG 23)</option>
+                                        <option value="0.60">0.60 мм</option>
+                                        <option value="0.63">0.63 мм</option>
+                                        <option value="0.64">0.64 мм (AWG 22)</option>
+                                        <option value="0.70">0.70 мм</option>
+                                        <option value="0.71">0.71 мм (AWG 21)</option>
+                                        <option value="0.80">0.80 мм</option>
+                                        <option value="0.81">0.81 мм (AWG 20)</option>
+                                        <option value="0.90">0.90 мм</option>
+                                        <option value="0.91">0.91 мм (AWG 19)</option>
+                                        <option value="1.0">1.0 мм</option>
+                                        <option value="1.02">1.02 мм (AWG 18)</option>
+                                    </select>
+                                </div>
+                                <div class="clapton-item">
+                                    <select id="clap_w_type" class="form-control">
+                                        <option value="0.09">Nickel 200 (Ni)</option>
+                                        <option value="0.24">NiFe30</option>
+                                        <option value="0.28">Dicodes Resist</option>
+                                        <option value="0.36">NiFe48</option>
+                                        <option value="0.42">Titanium (Ti)</option>
+                                        <option value="0.74">SS AISI 316</option>
+                                        <option value="0.8">SS AISI 304</option>
+                                        <option value="1.08" selected>Nichrome Ni80</option>
+                                        <option value="1.11">Nichrome Ni60</option>
+                                        <option value="1.39">Фехраль</option>
+                                        <option value="1.35">Kanthal D</option>
+                                        <option value="1.45">Kanthal A1</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-9 col-sm-8 voltage-input">
+                            <label for="voltage">Напруга (V)</label>
+                            <input type="number" id="voltage" name="voltage" value="3.7" step="0.1" min="3" max="8" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-sm-4 voltage-checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ohmcorrection" name="ohmcorrection" checked>
+                                <label for="ohmcorrection">Корекція опору (10%)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-5 col-sm-12">
+                <div class="calc-block">
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4 style="margin-bottom: 1px;">Потужність</h4>
+                            <h6 style="margin-top: 1px; color: #00C800;" id="cool_hot">Оптимальна</h6>
+                        </div>
+                        <div class="result-value-container">
+                            <h4 id="pw_color">
+                                <span id="r_power" class="result-value">12.46</span> Watt
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="result-row">
+                        <div class="result-label">
+                            <p><i>рекомендована</i></p>
+                        </div>
+                        <div class="result-value-container">
+                            <p><i><span id="r_optpower" class="result-value">14.91</span> Watt</i><span id="clpatt" class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Рекомендована потужність розраховується без урахування Клептон-койла!" style="visibility: hidden;"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4>Опір</h4>
+                        </div>
+                        <div class="result-value-container">
+                            <h4><span id="r_resist" class="result-value">1.10</span> Ω</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4>Довжина дроту</h4>
+                        </div>
+                        <div class="result-value-container">
+                            <h4><span id="r_wirelength" class="result-value">55.07</span> мм х <span id="x_wire" class="result-value">1</span></h4>
+                        </div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4>Струм</h4>
+                        </div>
+                        <div class="result-value-container">
+                            <h4><span id="r_curent" class="result-value">3.37</span> Amp</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4>Поверхнева потужність</h4>
+                        </div>
+                        <div class="result-value-container">
+                            <h4><span id="r_powden" class="result-value">0.21</span> W/мм²</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4>Довжина спіралі</h4>
+                        </div>
+                        <div class="result-value-container">
+                            <h4><span id="r_cowidth" class="result-value">2.2</span> мм</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">
+                            <h4>Температура (суха)</h4>
+                        </div>
+                        <div class="result-value-container">
+                            <h4 id="r_tempcolor">
+                                <span id="r_tempk" class="result-value">1892</span> К
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="copyright">
+    By <a href="https://t.me/BMWeast523" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-telegram"></i> <strong>BMWeast</strong>
+    </a>
+</div>
+    </div>
+<script src="CoilCalculator.js"></script>    
+</body>
+</html>

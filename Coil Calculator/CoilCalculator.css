@@ -1,0 +1,228 @@
+﻿        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f5f5f5;
+            line-height: 1.5;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h4 {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .btn-group label {
+            flex: 1;
+            text-align: center;
+            padding: 8px 5px;
+            background-color: #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 0;
+            font-size: 14px;
+            min-width: 40px;
+        }
+        .btn-group input[type="radio"] {
+            display: none;
+        }
+        .btn-group input[type="radio"]:checked + label {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-12 {
+            padding: 0 10px;
+            width: 100%;
+        }
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 0;
+            font-size: 13px;
+            height: 100%;
+            justify-content: flex-end;
+        }
+        .checkbox input {
+            margin: 0;
+        }
+        .calc-block {
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            background-color: #FCFCFC;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .bg-info {
+            background-color: #d9edf7;
+            padding: 5px 10px 5px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .result-value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .result-label {
+            flex: 1;
+        }
+        .result-value-container {
+            flex: 1;
+            text-align: right;
+        }
+        #pw_color, #r_tempcolor {
+            padding: 8px 10px;
+            color: white;
+            border-radius: 5px;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        /* Стилі для блоку обмотки (Clapton) */
+        .clapton-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .clapton-item {
+            flex: 1;
+            min-width: 165px;
+        }
+        
+        /* Адаптивні стилі */
+        @media (min-width: 576px) {
+            .col-sm-6 {
+                width: 50%;
+            }
+        }
+        @media (min-width: 768px) {
+            .col-md-3 { width: 25%; }
+            .col-md-4 { width: 33.33%; }
+            .col-md-5 { width: 41.66%; }
+            .col-md-6 { width: 50%; }
+            .col-md-7 { width: 58.33%; }
+            .col-md-8 { width: 66.66%; }
+            .col-md-9 { width: 75%; }
+            .col-md-12 { width: 100%; }
+            
+            .voltage-row {
+                display: flex;
+                align-items: center;
+            }
+            .voltage-input {
+                flex: 1;
+                margin-right: 15px;
+            }
+            .voltage-checkbox {
+                flex: 0 0 auto;
+            }
+            
+            /* Для ПК - клэптон в рядок */
+            .clapton-container {
+                flex-wrap: nowrap;
+            }
+        }
+        
+        /* Для мобільних - клэптон в стовбець */
+        @media (max-width: 767px) {
+            .clapton-container {
+                flex-direction: column;
+            }
+            .clapton-item {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+        
+        /* Tooltip styles */
+        .glyphicon-question-sign {
+            color: #d9534f;
+            margin-left: 5px;
+            cursor: help;
+        }
+        .calculator .copyright {
+            text-align: right;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        .calculator .copyright:hover {
+            opacity: 1;
+        }
+        .copyright a {
+            color: #0088cc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .copyright a:hover {
+            color: #005999;
+            text-decoration: none;
+        }
+        .copyright .fab.fa-telegram {
+            font-size: 1.1em;
+            color: inherit;
+        }
