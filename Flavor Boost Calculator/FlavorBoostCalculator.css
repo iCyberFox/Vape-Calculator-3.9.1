@@ -1,0 +1,136 @@
+﻿    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .card {
+      background-color: #ffffff;
+      padding: 20px 15px 20px 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #1e293b;
+      font-size: 22px;
+      font-weight: 600;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #334155;
+    }
+    input[type="number"],
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .input-sm {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .full-width-input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .button:hover {
+      background-color: #2563eb;
+    }
+    .add-btn {
+      background-color: #27ae60;
+    }
+    .add-btn:hover {
+      background-color: #219150;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #1e293b;
+      white-space: pre-wrap;
+    }
+    .flavor-container {
+      margin-bottom: 15px;
+    }
+    .flavor-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .flavor-row input[type="text"] {
+      width: 40%;
+    }
+    .flavor-row input[type="number"] {
+      width: 30%;
+    }
+    .remove-btn {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      font-size: 20px;
+      border-radius: 6px;
+      padding: 0 12px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background-color: #dc2626;
+    }
+ .copyright {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #999;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+.copyright:hover {
+    opacity: 1;
+}
+.copyright a {
+    color: #0088cc; /* Синій колір як в Telegram */
+    text-decoration: none; /* Повністю прибирає підкреслення */
+    transition: all 0.3s ease; /* Плавні анімації */
+}
+.copyright a:hover {
+    color: #005999; /* Темніший синій при наведенні */
+    text-decoration: none; /* Гарантуємо, що підкреслення не з'явиться */
+}
+.copyright .fab.fa-telegram {
+    font-size: 1.1em;
+    color: inherit; /* Успадковує синій колір */
+}

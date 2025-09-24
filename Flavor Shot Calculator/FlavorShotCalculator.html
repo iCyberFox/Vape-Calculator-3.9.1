@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор флейвор шоту</title>
+<link rel="stylesheet" href="FlavorShotCalculator.css">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="calculator">
+  <h1>Калькулятор флейвор шоту</h1>
+
+  <div class="form-group">
+    <label for="shotVolume">Обʼєм шоту (мл):</label>
+    <input type="number" id="shotVolume" value="10" min="1">
+  </div>
+
+  <div class="total-percent">Сумарний %: 0%</div>
+
+  <div id="flavors">
+    <div class="flavor-row">
+      <input type="text" placeholder="Ароматизатор" class="flavorName" value="Ароматизатор">
+      <div class="input-percent-wrapper">
+        <input type="number" placeholder="% ароматизатора" class="flavorPercent" min="0" max="100">
+      </div>
+      <button class="btn-remove removeFlavor">×</button>
+    </div>
+  </div>
+
+  <button id="addFlavor" class="btn-add">Додати ароматизатор +</button>
+  <button id="calculate">Розрахувати</button>
+
+  <div class="result" id="result">
+    <h3>Результат:</h3>
+    <div id="resultContent"></div>
+  </div>
+<div class="copyright">
+    By <a href="https://t.me/BMWeast523" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-telegram"></i> <strong>BMWeast</strong>
+    </a>
+</div>
+</div>
+<script src="FlavorShotCalculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор змішування основ</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <link rel="stylesheet" href="VapeCalculatorSlider.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Калькулятор змішування основ</h2>
+
+    <label>Обʼєм бази №1 (мл):</label>
+    <input type="number" id="volume1" value="30">
+
+    <label>Міцність нікотину №1 (мг/мл):</label>
+    <input type="number" id="nic1" value="6">
+
+    <div class="slider-container">
+      <div class="slider-label">
+        <span>Співвідношення VG/PG першої бази:</span>
+        <span id="pgvgLabel1">60/40</span>
+      </div>
+      <input type="range" id="pgvg1" min="0" max="100" step="1" value="40">
+      <div class="pgvg-values">
+        <div>
+          <label>VG (%)</label>
+          <input type="number" id="vg1" value="60" min="0" max="100">
+        </div>
+        <div>
+          <label>PG (%)</label>
+          <input type="number" id="pg1" value="40" min="0" max="100">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <label>Обʼєм бази №2 (мл):</label>
+    <input type="number" id="volume2" value="2">
+
+    <label>Міцність нікотину №2 (мг/мл):</label>
+    <input type="number" id="nic2" value="100">
+
+    <div class="slider-container">
+      <div class="slider-label">
+        <span>Співвідношення VG/PG другої бази:</span>
+        <span id="pgvgLabel2">0/100</span>
+      </div>
+      <input type="range" id="pgvg2" min="0" max="100" step="1" value="100">
+      <div class="pgvg-values">
+        <div>
+          <label>VG (%)</label>
+          <input type="number" id="vg2" value="0" min="0" max="100">
+        </div>
+        <div>
+          <label>PG (%)</label>
+          <input type="number" id="pg2" value="100" min="0" max="100">
+        </div>
+      </div>
+    </div>
+
+    <button onclick="calculate()">Розрахувати</button>
+
+    <div class="result" id="result"></div>
+
+    <div class="copyright">
+      By <a href="https://t.me/BMWeast523" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-telegram"></i> <strong>BMWeast</strong>
+      </a>
+    </div>
+  </div>
+<script src="VapeCalculatorSlider.js"></script>
+
+</body>
+</html>

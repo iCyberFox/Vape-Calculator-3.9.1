@@ -1,0 +1,68 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 608">
+  <rect x="64" y="32" width="384" height="544" rx="40" ry="40" fill="#4d4d4d"/>
+  <rect x="128" y="64" width="256" height="96" rx="10" fill="#64c2f0"/>
+  <text x="360" y="136" font-size="70" fill="white" font-family="Segoe UI" text-anchor="end">0.</text>
+
+  <!-- ON/C button -->
+  <rect x="336" y="176" width="64" height="64" rx="8" fill="#e74c3c"/>
+  <text x="368" y="218" text-anchor="middle" font-size="20" font-family="Segoe UI" fill="white">ON/C</text>
+
+  <!-- Row 1 -->
+  <rect x="96" y="176" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="128" y="218" text-anchor="middle" font-size="36" fill="white">√</text>
+
+  <rect x="176" y="176" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="208" y="218" text-anchor="middle" font-size="30" fill="white">%</text>
+
+  <rect x="256" y="176" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="288" y="218" text-anchor="middle" font-size="30" fill="white">+/−</text>
+
+  <!-- Row 2 -->
+  <rect x="96" y="256" width="64" height="64" rx="8" fill="#999"/>
+  <text x="128" y="298" text-anchor="middle" font-size="36" fill="white">7</text>
+
+  <rect x="176" y="256" width="64" height="64" rx="8" fill="#999"/>
+  <text x="208" y="298" text-anchor="middle" font-size="36" fill="white">8</text>
+
+  <rect x="256" y="256" width="64" height="64" rx="8" fill="#999"/>
+  <text x="288" y="298" text-anchor="middle" font-size="36" fill="white">9</text>
+
+  <rect x="336" y="256" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="368" y="298" text-anchor="middle" font-size="36" fill="white">×</text>
+
+  <!-- Row 3 -->
+  <rect x="96" y="336" width="64" height="64" rx="8" fill="#999"/>
+  <text x="128" y="378" text-anchor="middle" font-size="36" fill="white">4</text>
+
+  <rect x="176" y="336" width="64" height="64" rx="8" fill="#999"/>
+  <text x="208" y="378" text-anchor="middle" font-size="36" fill="white">5</text>
+
+  <rect x="256" y="336" width="64" height="64" rx="8" fill="#999"/>
+  <text x="288" y="378" text-anchor="middle" font-size="36" fill="white">6</text>
+
+  <rect x="336" y="336" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="368" y="378" text-anchor="middle" font-size="36" fill="white">−</text>
+
+  <!-- Row 4 -->
+  <rect x="96" y="416" width="64" height="64" rx="8" fill="#999"/>
+  <text x="128" y="458" text-anchor="middle" font-size="36" fill="white">1</text>
+
+  <rect x="176" y="416" width="64" height="64" rx="8" fill="#999"/>
+  <text x="208" y="458" text-anchor="middle" font-size="36" fill="white">2</text>
+
+  <rect x="256" y="416" width="64" height="64" rx="8" fill="#999"/>
+  <text x="288" y="458" text-anchor="middle" font-size="36" fill="white">3</text>
+
+  <rect x="336" y="416" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="368" y="458" text-anchor="middle" font-size="36" fill="white">+</text>
+
+  <!-- Bottom Row (fits now) -->
+  <rect x="96" y="496" width="144" height="64" rx="8" fill="#999"/>
+  <text x="168" y="538" text-anchor="middle" font-size="36" fill="white">0</text>
+
+  <rect x="256" y="496" width="64" height="64" rx="8" fill="#999"/>
+  <text x="288" y="538" text-anchor="middle" font-size="36" fill="white">.</text>
+
+  <rect x="336" y="496" width="64" height="64" rx="8" fill="#64c2f0"/>
+  <text x="368" y="538" text-anchor="middle" font-size="36" fill="white">=</text>
+</svg>

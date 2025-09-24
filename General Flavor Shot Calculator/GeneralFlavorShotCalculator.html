@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Флейвор шот калькулятор</title>
+<link rel="stylesheet" href="GeneralFlavorShotCalculator.css">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<div class="calculator">
+<h1>Флейвор шот калькулятор</h1>
+
+<div id="flavors">
+  <div class="flavor-row">
+    <div class="flavor-input-wrapper">
+      <label>Назва ароматизатора</label>
+      <input type="text" class="flavorName" value="Ароматизатор">
+    </div>
+    <div class="flavor-input-wrapper input-ml-wrapper">
+      <label>Обʼєм (мл.)</label>
+      <input type="number" class="flavorVolume" value="10" min="0" step="0.1">
+    </div>
+    <div class="flavor-input-wrapper input-percent-wrapper">
+      <label>Концентрація (%)</label>
+      <input type="number" class="flavorPercent" value="1" min="0" max="100" step="0.1">
+    </div>
+    <button class="btn-remove">✖</button>
+  </div>
+</div>
+
+<button class="btn-add">Додати ароматизатор</button>
+<button id="calculate">Розрахувати шот</button>
+
+<div class="result" id="result">
+  <h3>Результат:</h3>
+  <p id="maxVolume"></p>
+  <div id="usage"></div>
+  <div id="leftovers"></div>
+</div>
+<div class="copyright">
+    By <a href="https://t.me/BMWeast523" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-telegram"></i> <strong>BMWeast</strong>
+    </a>
+</div>
+
+<script src="GeneralFlavorShotCalculator.js"></script>
+</body>
+</html>

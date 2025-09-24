@@ -1,0 +1,138 @@
+﻿    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 550px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-top: 12px;
+      display: block;
+      font-size: 15px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="range"] {
+      width: 100%;
+      margin-top: 4px;
+    }
+    .slider-container {
+      margin-top: 16px;
+    }
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .pgvg-values {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+    .pgvg-values div {
+      width: 48%;
+    }
+    .pgvg-values input {
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 6px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 24px;
+      width: 100%;
+      padding: 12px;
+      background-color: #2d9cdb;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .results-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .result {
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 25px;
+      border-left: 4px solid #42a5f5;
+      font-size: 16px;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .result p {
+      margin: 3px 0;
+      font-size: 16px;
+      color: #2c3e50;
+    }
+
+    .result-label {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-right: 4px;
+    }
+
+    .copyright {
+      text-align: right;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #999;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+    .copyright:hover {
+      opacity: 1;
+    }
+    .copyright a {
+      color: #0088cc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .copyright a:hover {
+      color: #005999;
+      text-decoration: none;
+    }
+    .copyright .fab.fa-telegram {
+      font-size: 1.1em;
+      color: inherit;
+    }
+    hr {
+      margin: 24px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
