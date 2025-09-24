@@ -47,7 +47,7 @@ document.getElementById('addFlavor').addEventListener('click', function(){
   flavorDiv.innerHTML = `
     <input type="text" placeholder="Ароматизатор" class="flavorName" value="Ароматизатор">
     <div class="input-percent-wrapper">
-      <input type="number" placeholder="% ароматизатора" class="flavorPercent" min="0" max="100">
+      <input type="number" placeholder="ароматизатора" class="flavorPercent" min="0" max="100" step="0.1">
     </div>
     <button class="btn-remove removeFlavor">×</button>
   `;
@@ -70,3 +70,4 @@ document.getElementById('calculate').addEventListener('click', function(){
 // Ініціалізація
 updateTotalPercent();
 updateResult();
+
