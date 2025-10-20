@@ -1,4 +1,4 @@
-﻿        body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             max-width: 650px;
             margin: 0 auto;
@@ -29,19 +29,17 @@
     opacity: 1;
 }
 .copyright a {
-    color: #0088cc; /* Синій колір як в Telegram */
-    text-decoration: none; /* Повністю прибирає підкреслення */
-    transition: all 0.3s ease; /* Плавні анімації */
+    color: #0088cc;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
-
 .copyright a:hover {
-    color: #005999; /* Темніший синій при наведенні */
-    text-decoration: none; /* Гарантуємо, що підкреслення не з'явиться */
+    color: #005999;
+    text-decoration: none;
 }
-
 .copyright .fab.fa-telegram {
     font-size: 1.1em;
-    color: inherit; /* Успадковує синій колір */
+    color: inherit;
 }
 @media (max-width: 480px) {
     .calculator .copyright {
@@ -106,11 +104,9 @@
     position: relative;
     flex: 1;
 }
-
 .input-percent-wrapper input {
     padding-right: 25px;
 }
-
 .input-percent-wrapper::after {
     content: '%';
     position: absolute;
