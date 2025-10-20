@@ -16,7 +16,7 @@
     <div class="calculator">
         <div class="form-group">
             <label for="totalVolume">Загальний об'єм рідини (мл):</label>
-            <input type="number" id="totalVolume" min="1" step="1" value="25">
+            <input type="number" id="totalVolume" min="1" step="1" value="30">
         </div>
         
         <div class="form-row">
@@ -24,7 +24,7 @@
                 <label for="baseType">Тип бази VG/PG:</label>
                 <select id="baseType">
                     <option value="50/50">50/50</option>
-                    <option value="60/40" selected>60/40</option>
+                    <option value="60/40">60/40</option>
                     <option value="65/35">65/35</option>
                     <option value="70/30">70/30</option>
                 </select>
@@ -33,7 +33,7 @@
                 <label for="nicotineStrength">Нікотин (мг/мл):</label>
                 <select id="nicotineStrength">
                     <option value="0">0</option>
-                    <option value="3" selected>3</option>
+                    <option value="3">3</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
@@ -42,9 +42,7 @@
         
         <div class="form-group">
             <label>Ароматизатори:</label>
-            <div id="flavorsContainer">
-                <!-- Flavors will be added here -->
-            </div>
+            <div id="flavorsContainer"></div>
             <button type="button" class="btn-add" onclick="addFlavor()">+ Додати ароматизатор</button>
         </div>
         
@@ -69,5 +67,6 @@
 
 </body>
 </html>
+
 
 
