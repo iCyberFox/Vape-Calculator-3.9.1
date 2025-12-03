@@ -17,35 +17,35 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-.calculator .copyright {
-    text-align: right;
-    margin-top: 30px;
-    font-size: 14px;
-    color: #999;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-.calculator .copyright:hover {
-    opacity: 1;
-}
-.copyright a {
-    color: #0088cc;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-.copyright a:hover {
-    color: #005999;
-    text-decoration: none;
-}
-.copyright .fab.fa-telegram {
-    font-size: 1.1em;
-    color: inherit;
-}
-@media (max-width: 480px) {
-    .calculator .copyright {
-        font-size: 12px;
-    }
-}
+        .calculator .copyright {
+            text-align: right;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        .calculator .copyright:hover {
+            opacity: 1;
+        }
+        .copyright a {
+            color: #0088cc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .copyright a:hover {
+            color: #005999;
+            text-decoration: none;
+        }
+        .copyright .fab.fa-telegram {
+            font-size: 1.1em;
+            color: inherit;
+        }
+        @media (max-width: 480px) {
+            .calculator .copyright {
+                font-size: 12px;
+            }
+        }
         .form-group {
             margin-bottom: 20px;
         }
@@ -100,22 +100,22 @@
         .btn-remove:hover {
             background-color: #c0392b;
         }
-	.input-percent-wrapper {
-    position: relative;
-    flex: 1;
-}
-.input-percent-wrapper input {
-    padding-right: 25px;
-}
-.input-percent-wrapper::after {
-    content: '%';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #555;
-    font-size: 16px;
-}
+        .input-percent-wrapper {
+            position: relative;
+            flex: 1;
+        }
+        .input-percent-wrapper input {
+            padding-right: 25px;
+        }
+        .input-percent-wrapper::after {
+            content: '%';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #555;
+            font-size: 16px;
+        }
         .result {
             margin-top: 30px;
             padding: 20px;
@@ -128,10 +128,10 @@
             margin-top: 0;
             color: #2c3e50;
         }
-.result p{
-	margin: 6px 0;
-    line-height: 1.4;
-}
+        .result p {
+            margin: 6px 0;
+            line-height: 1.4;
+        }
         .flavor-row {
             display: flex;
             gap: 10px;
@@ -154,6 +154,12 @@
             font-weight: 600;
             margin-top: 10px;
         }
-	.new_param {
-	    margin-top: 5px;
+        .new_param {
+            margin-top: 5px;
+        }
+        .small-volume-note {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 2px;
         }
