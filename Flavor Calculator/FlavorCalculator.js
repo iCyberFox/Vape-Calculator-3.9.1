@@ -172,5 +172,5 @@ ${finalPGRatio.toFixed(1)} PG`;
         }
 
         window.onload = function() {
-            addFlavor('Перший ароматизатор', 15);
+            addFlavor('Ароматизатор', 15);
         };
