@@ -107,9 +107,10 @@
         }
         .input-percent-wrapper input {
             padding-right: 2rem; /* more space so numbers don't overlap the % */
+            padding-left: 0.6rem; /* keep number away from left edge when left-aligned */
             width: 100%;
             box-sizing: border-box;
-            text-align: right; /* align numbers to the right so decimals are visible */
+            text-align: left; /* align numbers to the left as requested */
             font-variant-numeric: tabular-nums; /* consistent digit width */
             font-size: 1rem;
         }
