@@ -102,10 +102,13 @@
         }
         .input-percent-wrapper {
             position: relative;
-            flex: 1;
+            flex: 0 0 100px; /* slightly wider so two decimals are visible */
+            min-width: 100px;
         }
         .input-percent-wrapper input {
             padding-right: 25px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .input-percent-wrapper::after {
             content: '%';
@@ -138,8 +141,9 @@
             margin-bottom: 10px;
             align-items: center;
         }
-        .flavor-row input {
-            flex: 1;
+        .flavor-row input[type="text"] {
+            flex: 1; /* name input takes remaining space */
+            min-width: 160px; /* slightly reduced to balance percent width */
         }
         .warning {
             color: #e74c3c;
