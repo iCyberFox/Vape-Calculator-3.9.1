@@ -106,7 +106,7 @@
             min-width: 6.5rem;
         }
         .input-percent-wrapper input {
-            padding-right: 0.8rem;
+            padding-right: 2rem; /* more space so numbers don't overlap the % */
             width: 100%;
             box-sizing: border-box;
             text-align: right; /* align numbers to the right so decimals are visible */
@@ -116,11 +116,12 @@
         .input-percent-wrapper::after {
             content: '%';
             position: absolute;
-            right: 10px;
+            right: 0.5rem; /* place percent slightly inside wrapper but outside text area */
             top: 50%;
             transform: translateY(-50%);
             color: #555;
-            font-size: 16px;
+            font-size: 0.95rem;
+            pointer-events: none;
         }
         .result {
             margin-top: 30px;
