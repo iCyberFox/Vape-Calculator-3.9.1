@@ -114,6 +114,18 @@
             font-variant-numeric: tabular-nums; /* consistent digit width */
             font-size: 1rem;
         }
+
+        /* Force consistent left alignment and remove native number appearance on mobile */
+        .input-percent-wrapper input[type="number"] {
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
+        }
+        .input-percent-wrapper input[type="number"]::-webkit-outer-spin-button,
+        .input-percent-wrapper input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
         .input-percent-wrapper::after {
             content: '%';
             position: absolute;
