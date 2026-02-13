@@ -107,10 +107,10 @@
         }
         .input-percent-wrapper input {
             padding-right: 2rem; /* more space so numbers don't overlap the % */
-            padding-left: 0.6rem; /* keep number away from left edge when left-aligned */
+            padding-left: 0.2rem; /* small left padding */
             width: 100%;
             box-sizing: border-box;
-            text-align: left; /* align numbers to the left as requested */
+            text-align: center; /* center numbers to match screenshot */
             font-variant-numeric: tabular-nums; /* consistent digit width */
             font-size: 1rem;
         }
@@ -129,11 +129,11 @@
         .input-percent-wrapper::after {
             content: '%';
             position: absolute;
-            right: 0.5rem; /* place percent slightly inside wrapper but outside text area */
+            right: 0.6rem; /* place percent slightly inside wrapper but outside text area */
             top: 50%;
             transform: translateY(-50%);
             color: #555;
-            font-size: 0.95rem;
+            font-size: 1rem;
             pointer-events: none;
         }
         .result {
