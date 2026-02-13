@@ -102,13 +102,16 @@
         }
         .input-percent-wrapper {
             position: relative;
-            flex: 0 0 100px; /* slightly wider so two decimals are visible */
-            min-width: 100px;
+            flex: 0 0 6.5rem; /* relative size so it adapts to user scaling */
+            min-width: 6.5rem;
         }
         .input-percent-wrapper input {
-            padding-right: 25px;
+            padding-right: 0.8rem;
             width: 100%;
             box-sizing: border-box;
+            text-align: right; /* align numbers to the right so decimals are visible */
+            font-variant-numeric: tabular-nums; /* consistent digit width */
+            font-size: 1rem;
         }
         .input-percent-wrapper::after {
             content: '%';
@@ -143,7 +146,21 @@
         }
         .flavor-row input[type="text"] {
             flex: 1; /* name input takes remaining space */
-            min-width: 160px; /* slightly reduced to balance percent width */
+            min-width: 9rem; /* relative min width to balance percent input across scalings */
+        }
+
+        /* Improve responsive behavior for small screens / default scaling */
+        @media (max-width: 480px) {
+            .input-percent-wrapper {
+                flex: 0 0 5.5rem;
+                min-width: 5.5rem;
+            }
+            .flavor-row input[type="text"] {
+                min-width: 8rem;
+            }
+            input, select, .input-percent-wrapper input {
+                font-size: 0.98rem;
+            }
         }
         .warning {
             color: #e74c3c;
